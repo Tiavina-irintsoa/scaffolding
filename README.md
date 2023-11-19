@@ -9,6 +9,7 @@ Générer des classes JAVA et C# a partir d'une table dans une base de donnees M
 - `test_scaffolding` : un dossier de test du scaffolgind
 - `framework.bat` : le script BAT executé lors du scaffolding et de la configuration de la base de donnees (Pour Windows) NON TESTE
 - `framework.sh` : le script BASH executé lors du scaffolding et de la configuration de la base de donnees (Pour Linux)
+- `framework.jar` : la librairie jar du projet
 
 ## Instructions d'installation pour Linux
 
