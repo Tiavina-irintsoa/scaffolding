@@ -17,9 +17,9 @@ Générer des classes JAVA et C# a partir d'une table dans une base de donnees M
 ```sh
     alias framework='/chemin/vers/framework.sh'
 ```
-- Mettre dans la classpath les librairies `gson-2.8.2.jar` (dans /framework/lib) et `framework.jar`. C'est-a-dire ajouter au fichier `/etc/bash.bashrc` :
+- Mettre dans la classpath les librairies `gson-2.8.2.jar`, `framework.jar` , `mysql-connector-j-8.0.33.jar` et `postgresql-42.5.0.jar`. C'est-a-dire ajouter au fichier `/etc/bash.bashrc` :
 ```sh
-    export CLASSPATH='.:/chemin/vers/framework.jar:/chemin/vers/gson-2.8.2.jar:/vos/autres/dependances/java/.jar'
+    export CLASSPATH='.:/chemin/vers/framework.jar:/chemin/vers/gson-2.8.2.jar:/chemin/vers/`postgresql-42.5.0.jar:/chemin/vers/mysql-connector-j-8.0.33.jar:/vos/autres/dependances/java/.jar'
 ```
 - Mettre dans la variable d'environnement nommee `templateDIR` le chemin vers le dossier `/templates`. C'est-a-dire ajouter au fichier `/etc/bash.bashrc` :
 ```sh 
