@@ -1,0 +1,12 @@
+namespace ##package##;
+@import@
+
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+[Table("##tablename##")]
+public class ##classname## {
+    ##attributs##
+    ##getterssetters##
+}

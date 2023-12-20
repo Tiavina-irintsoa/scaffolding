@@ -13,35 +13,54 @@ public class Table {
     String nomTable;
     Column[] colonnes;
 
-    public String getAttributsCode(){
+    public String getAttributsCode(Langage langage){
         StringBuilder attributsCode = new StringBuilder();
-        for (Column column : colonnes) {
-            attributsCode.append("\n");
-            attributsCode.append("  private "+column.getClasse().getClassName()+" "+column.getNomColonne()).append(";");
-        }
-        return attributsCode.toString();
-    }
-    
-    public String getImportCode(String language){
-        StringBuilder code = new StringBuilder();
-        if(language.compareTo("java")==0){
+        String language = langage.getNom();
+        if(language.compareTo("java")==0){            
             for (Column column : colonnes) {
-                // Si le package est différent de java.lang, générer l'import
-                if (!column.getClasse().getPackageName().equals("java.lang")) {
-                    code.append("import ").append(column.getClasse().getPackageName()).append("."+column.getClasse().getClassName()+";\n");
-                }
+                attributsCode.append("\n");
+                attributsCode.append("@Column(name = \"" + column.getNomColonne() + "\" )");
+                attributsCode.append("\n");
+                attributsCode.append("  private "+column.getClasse().getClassName()+" "+column.getNomColonne()).append(";");
             }
         }
         else if(language.compareTo("csharp")==0){
             for (Column column : colonnes) {
-                // Si le namespace est différent de System, générer le using statement
-                if (!column.getClasse().getPackageName().equals("System")) {
-                    code.append("using ").append(column.getClasse().getPackageName()).append(";\n");
-                }   
+                attributsCode.append("\n");
+                attributsCode.append("[Column( \"" + column.getNomColonne() + "\")]");
+                attributsCode.append("\n");
+                attributsCode.append("  private "+column.getClasse().getClassName()+" "+column.getNomColonne()).append(";");
+            }
+        }
+        return attributsCode.toString();
+    }
+    
+    public String getImportCode(Langage langage){
+        StringBuilder code = new StringBuilder();
+        String language = langage.getNom();
+        if(language.compareTo("java")==0){
+            for (Column column : colonnes) {
+                for (String notimport : langage.getProperties().getNotimport()) {
+                    // Si le package est différent de java.lang, générer l'import
+                    if (!column.getClasse().getPackageName().equals(notimport)) {
+                        code.append(langage.getProperties().getImports() + " ").append(column.getClasse().getPackageName()).append("."+column.getClasse().getClassName()+";\n");
+                    }
+                }                
+            }
+        }
+        else if(language.compareTo("csharp")==0){
+            for (Column column : colonnes) {
+                for (String notimport : langage.getProperties().getNotimport()) {
+                    // Si le namespace est différent de System, générer le using statement
+                    if (!column.getClasse().getPackageName().equals(notimport)) {
+                        code.append(langage.getProperties().getImports() + " ").append(column.getClasse().getPackageName()).append(";\n");
+                    }   
+                }
             }
         }
         return code.toString();
     }
+    
     public String getGettersSettersCode(String language){
         StringBuilder gettersSettersCode = new StringBuilder();
         if(language.compareTo("java")==0){

@@ -1,0 +1,20 @@
+[
+    {
+        "langage":"java" ,
+        "properties": { 
+            "package" : "package",
+            "import" : "import",
+            "ext" : "java",
+            "notimport" : ["java.lang"]
+        }
+    },
+    {
+        "langage" : "csharp" ,
+        "properties" : { 
+            "package" : "namespace", 
+            "import" : "using", 
+            "ext" : "cs", 
+            "notimport" : ["System"]
+        }   
+    }
+]

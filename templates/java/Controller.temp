@@ -1,0 +1,43 @@
+package controller;
+import ##package##.##classname##;
+import service.##classname##Service;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ##classname##Controller {
+
+    @Autowired
+    private ##classname##Service service;
+
+    @GetMapping("/##classname##s")
+    public List<##classname##> getAll() {
+        return service.findAll();
+    }
+
+    @GetMapping ( "/##classname##s/{id}" )
+    public  ResponseEntity< ##classname## > find##classname##ById( @PathVariable Long id) {
+        return service.findById(id);
+    }
+
+    @PutMapping ( "/##classname##s/{id} " )
+    public  ResponseEntity< ##classname## > update##classname##( @PathVariable Long id, @RequestBody ##classname## entite) {
+        ##classname## newEntity = service.findById (id) ;       
+        return newEntity; 
+    }
+
+    @DeleteMapping ( "/##classname##s/{id} " )
+    public  ResponseEntity< Void > delete##classname##( @PathVariable Long id) {
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    
+}
