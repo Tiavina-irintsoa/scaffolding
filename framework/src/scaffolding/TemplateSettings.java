@@ -1,40 +1,46 @@
 package scaffolding;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
+import util.StringUtil;
+
 public class TemplateSettings {
-    static String filePath="templateConfig.json";
+    
     @SerializedName("package")
     TemplateTag packageTags;
     @SerializedName("import")
     TemplateTag importTags;
+    @SerializedName("classDeclaration")
+    TemplateTag declarationTag;
     @SerializedName("fields")
     TemplateTag fieldsTags;
     @SerializedName("methods")
     TemplateTag methodsTags;
+    @SerializedName("endClass")
+    TemplateTag endTags;
 
     public TemplateSettings(){
 
     }
-    public static TemplateSettings read() throws Exception{
-        String templateDIR = System.getenv("templateDIR");
-        if(templateDIR == null){
-            throw new Exception("Aucune variable d'environnement specifie pour templateDIR");
-        }
-        String path = templateDIR + "/" + filePath;
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            Gson gson = new Gson();
-            TemplateSettings settings = gson.fromJson(reader, TemplateSettings.class);
-            return settings;
-        } catch (IOException e) {
-            throw e;
-        }
+    public String getPackageRegex(){
+        return StringUtil.regex(packageTags.getStart(), packageTags.getEnd());
     }
+    public String getImportRegex(){
+        return StringUtil.regex(importTags.getStart(), importTags.getEnd());
+    }
+    public String getDeclarationRegex(){
+        return StringUtil.regex(declarationTag.getStart(), declarationTag.getEnd());
+    }
+    public String getFieldsRegex(){
+        return StringUtil.regex(fieldsTags.getStart(), fieldsTags.getEnd());
+    }
+    public String getMethodsRegex(){
+        return StringUtil.regex(methodsTags.getStart(), methodsTags.getEnd());
+    }
+    public String getEndClassRegex(){
+        return StringUtil.regex(endTags.getStart(), endTags.getEnd());
+    }
+   
     public TemplateTag getPackageTags() {
         return packageTags;
     }
@@ -44,6 +50,7 @@ public class TemplateSettings {
     public TemplateTag getImportTags() {
         return importTags;
     }
+
     public void setImportTags(TemplateTag importTags) {
         this.importTags = importTags;
     }
@@ -58,5 +65,17 @@ public class TemplateSettings {
     }
     public void setMethodsTags(TemplateTag methodsTags) {
         this.methodsTags = methodsTags;
+    }
+    public TemplateTag getDeclarationTag() {
+        return declarationTag;
+    }
+    public void setDeclarationTag(TemplateTag declarationTag) {
+        this.declarationTag = declarationTag;
+    }
+    public TemplateTag getEndTags() {
+        return endTags;
+    }
+    public void setEndTags(TemplateTag endTags) {
+        this.endTags = endTags;
     }
 }

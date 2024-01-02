@@ -8,14 +8,19 @@ import util.LangageReader;
 public class Langage {
     @SerializedName("langage")
     String nom;
+    @SerializedName("ext")
     String extension;
     HashMap<String, String> syntaxes;
     @SerializedName("notimport")
     String[] notImport;
+    @SerializedName("types")
     HashMap<String,MyClasse> typeCorresponding;
 
     public MyClasse getClassOf(String type){
         return typeCorresponding.get(type);
+    }
+    public String getSyntaxOf(String templateSyntax){
+        return syntaxes.get(templateSyntax);
     }
     public static Langage getLangage(String langage) throws Exception{
         LangageReader langageReader = new LangageReader();
@@ -59,13 +64,9 @@ public class Langage {
         this.notImport = notImport;
     }
 
-
-
     public HashMap<String, String> getSyntaxes() {
         return syntaxes;
     }
-
-
 
     public void setSyntaxes(HashMap<String, String> syntaxes) {
         this.syntaxes = syntaxes;

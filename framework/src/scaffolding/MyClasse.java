@@ -13,6 +13,9 @@ public class MyClasse {
         setClassName(className);
         setPackageName(packageName);
     }
+    public String toString(){
+        return packageName+"."+className;
+    }
     public String getClassName() {
         return className;
     }
@@ -25,9 +28,6 @@ public class MyClasse {
     public void setPackageName(String packageName) {
         this.packageName = packageName;
     }
-    @Override
-    public String toString() {
-        return "MyClasse [className=" + className + ", packageName=" + packageName + "]";
-    }
+   
    
 }

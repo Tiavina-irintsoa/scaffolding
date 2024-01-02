@@ -4,7 +4,7 @@
         "syntaxes": { 
             "package" : "package",
             "import" : "import",
-            "lineend" : ";",
+            "lineend" : ";\n",
             "linebreak" : "\n",
             "publicencaps" : "public",
             "privateencaps" : "private",
@@ -13,7 +13,14 @@
             "dot": ".",
             "get": "get",
             "set": "set",
-            "affect": "="
+            "affect": "=",
+            "class":"class",
+            "bracketstart":"{",
+            "bracketsend":"}",
+            "parenthesisstart":"(",
+            "parenthesisend":")",
+            "return":"return",
+            "voidtype":"void"
         },
         "ext" : "java",
         "notimport" : ["java.lang"],
@@ -39,6 +46,10 @@
                 "classname": "String" 
             },
             "int":{
+                "package":"java.lang",
+                "classname": "Integer" 
+            },
+            "int4":{
                 "package":"java.lang",
                 "classname": "Integer" 
             },
@@ -89,7 +100,7 @@
         "syntaxes": { 
             "package" : "namespace",
             "import" : "using",
-            "lineend" : ";",
+            "lineend" : ";\n",
             "linebreak" : "\n",
             "publicencaps" : "public",
             "privateencaps" : "private",
@@ -98,7 +109,14 @@
             "dot": ".",
             "get": "Get",
             "set": "Set",
-            "affect": "="
+            "affect": "=",
+            "class":"class",
+            "bracketstart":"{",
+            "bracketsend":"}",
+            "parenthesisstart":"(",
+            "parenthesisend":")",
+            "return":"return",
+            "voidtype":"void"
         },
         "ext" : "cs",
         "notimport" : ["System"],
@@ -125,6 +143,10 @@
                 "classname": "String"
             },
             "int": {
+                "package": "System",
+                "classname": "Int32"
+            },
+            "int4": {
                 "package": "System",
                 "classname": "Int32"
             },

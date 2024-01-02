@@ -5,11 +5,30 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Vector;
 
 public class Table {
     String nomTable;
     Column[] colonnes;
     public Table() {
+    }
+    public Column[] getDistinctColumns(){
+        boolean isIn = false;
+        Vector<Column> distincts = new Vector<Column>();
+        for (int index1 = 0; index1 < colonnes.length; index1++) {
+            isIn=false;
+            for (int index2 = 0; index2 < distincts.size(); index2++) {
+                
+                if(colonnes[index1].equalsType(distincts.get(index2))){
+                    isIn = true;
+                    break;
+                }
+            }
+            if(isIn==false){
+                distincts.add(colonnes[index1]);
+            }
+        }
+        return distincts.toArray(new Column[distincts.size()]);
     }
     public Table(String nomTable, Connection con,Langage langage) throws Exception{
         setNomTable(nomTable);

@@ -9,6 +9,10 @@
             "start":"importstart",
             "end":"importend"
         },
+    "classDeclaration":{
+        "start":"classdeclarationstart",
+        "end":"classdeclarationend"
+    },
     "fields":
         {
             "start":"fieldsstart",
@@ -18,5 +22,10 @@
         {
             "start":"settersgettersstart",
             "end" : "settersgettersend"
+        },
+    "endClass":
+        {
+            "start":"endclassstart",
+            "end" : "endclassend"
         }
 }

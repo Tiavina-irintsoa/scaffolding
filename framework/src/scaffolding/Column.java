@@ -7,6 +7,12 @@ public class Column {
         setNomColonne(nomColonne);
         setClasse(language.getClassOf(type));
     }
+    public boolean equalsType(Column another){
+        if(getClasse().getClassName().compareTo(another.getClasse().getClassName())==0 && getClasse().getPackageName().compareTo(another.getClasse().getPackageName())==0){
+            return true;
+        }
+        return false;
+    }
     public String getNomColonne() {
         return nomColonne;
     }
