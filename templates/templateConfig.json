@@ -27,5 +27,10 @@
         {
             "start":"endclassstart",
             "end" : "endclassend"
+        },
+    "classAnnotation":
+        {
+           "start":"classannotationstart",
+           "end": "classannotationend"
         }
 }

@@ -22,6 +22,7 @@
             "return":"return",
             "voidtype":"void"
         },
+        "import":[],
         "ext" : "java",
         "notimport" : ["java.lang"],
         "types":{
@@ -118,6 +119,7 @@
             "return":"return",
             "voidtype":"void"
         },
+        "import":[],
         "ext" : "cs",
         "notimport" : ["System"],
 

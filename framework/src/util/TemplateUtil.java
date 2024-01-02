@@ -14,10 +14,21 @@ import scaffolding.TemplateSettings;
 
 public class TemplateUtil {
     static private String modelTemp=System.getenv("templateDIR")+"/Model.temp";
+    static private String controllerTemp=System.getenv("templateDIR")+"/Controller.temp";
     static String templateSettings=System.getenv("templateDIR")+"/templateConfig.json";
     public static String readModelTemp() throws FileNotFoundException, IOException{
         StringBuilder contenu = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(modelTemp))) {
+            String ligne;
+            while ((ligne = reader.readLine()) != null) {
+                contenu.append(ligne).append("\n");
+            }
+        }
+        return contenu.toString();
+    }
+    public static String readControllerTemp() throws FileNotFoundException, IOException{
+        StringBuilder contenu = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader(controllerTemp))) {
             String ligne;
             while ((ligne = reader.readLine()) != null) {
                 contenu.append(ligne).append("\n");

@@ -15,6 +15,8 @@ public class Langage {
     String[] notImport;
     @SerializedName("types")
     HashMap<String,MyClasse> typeCorresponding;
+    @SerializedName("import")
+    String[] importPackage;
 
     public MyClasse getClassOf(String type){
         return typeCorresponding.get(type);
@@ -81,5 +83,11 @@ public class Langage {
     public String toString() {
         return "Langage [nom=" + nom + ", extension=" + extension + ", syntaxes=" + syntaxes + ", notImport="
                 + notImport + ", typeCorresponding=" + typeCorresponding + "]";
+    }
+    public String[] getImportPackage() {
+        return importPackage;
+    }
+    public void setImportPackage(String[] importPackage) {
+        this.importPackage = importPackage;
     }
 }

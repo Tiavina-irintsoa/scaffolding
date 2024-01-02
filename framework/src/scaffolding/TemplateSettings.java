@@ -18,6 +18,8 @@ public class TemplateSettings {
     TemplateTag methodsTags;
     @SerializedName("endClass")
     TemplateTag endTags;
+    @SerializedName("classAnnotation")
+    TemplateTag classAnnotations;
 
     public TemplateSettings(){
 
@@ -40,7 +42,9 @@ public class TemplateSettings {
     public String getEndClassRegex(){
         return StringUtil.regex(endTags.getStart(), endTags.getEnd());
     }
-   
+    public String getClassAnnotationRegex(){
+        return StringUtil.regex(classAnnotations.getStart(), classAnnotations.getEnd());
+    }
     public TemplateTag getPackageTags() {
         return packageTags;
     }
@@ -77,5 +81,11 @@ public class TemplateSettings {
     }
     public void setEndTags(TemplateTag endTags) {
         this.endTags = endTags;
+    }
+    public TemplateTag getClassAnnotations() {
+        return classAnnotations;
+    }
+    public void setClassAnnotations(TemplateTag classAnnotations) {
+        this.classAnnotations = classAnnotations;
     }
 }
