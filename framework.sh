@@ -1,32 +1,32 @@
 #!/bin/bash
 
-
 case "$1" in
     "generate")
-        read -s -p "Mot de passe : " motdepasse
-        echo
-        read -p "Language [1:java, 2:C#] : " chiffrelangage
-        if [ "$chiffrelangage" == "1" ]; then
-            langage="java"
-        elif [ "$chiffrelangage" == "2" ]; then 
-            langage="csharp"
-        else 
-            echo "Veuillez specifier le language utilise"
-            exit
-        fi
-        read -p "Table [*]: " table
-        if [ -z "$table" ]; then
-            modele=""
-        else
-            defaultmodel=$table
-            read -p "Nom du modele [$defaultmodel]: " modele
-        fi
-        if [ -z "$modele" ]; then
-            modele=$defaultmodel
-        fi
-        read -p "Nom du package :" package
-        java run.Generate $motdepasse $table $modele $package $langage
-        ;;
+        case "$2" in "model")
+            read -s -p "Mot de passe : " motdepasse
+            read -p "Language [1:java, 2:C#] : " chiffrelangage
+            if [ "$chiffrelangage" == "1" ]; then
+                langage="java"
+            elif [ "$chiffrelangage" == "2" ]; then 
+                langage="csharp"
+            else 
+                echo "Veuillez specifier le language utilise"
+                exit
+            fi
+            read -p "Table [*]: " table
+            if [ -z "$table" ]; then
+                modele=""
+            else
+                defaultmodel=$table
+                read -p "Nom du modele [$defaultmodel]: " modele
+            fi
+            if [ -z "$modele" ]; then
+                modele=$defaultmodel
+            fi
+            read -p "Nom du package :" package
+            java run.GenerateModel $motdepasse $table $modele $package $langage
+            esac
+            ;;
     "new")
         case "$2" in "project")
             defaultconfiguration='{
