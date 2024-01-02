@@ -3,9 +3,9 @@ package scaffolding;
 public class Column {
     String nomColonne;
     MyClasse classe;
-    public Column(String nomColonne, String type,String language) throws Exception{
-        this.nomColonne = nomColonne;
-        setClasse(DynamicClassGenerator.getClass(type,language));
+    public Column(String nomColonne, String type,Langage language) throws Exception{
+        setNomColonne(nomColonne);
+        setClasse(language.getClassOf(type));
     }
     public String getNomColonne() {
         return nomColonne;

@@ -1,0 +1,14 @@
+Generation projet:
+    ☐ dossiers controller, model, template, fichier bat, fichier database.json
+Generation Model:
+    ☐ sh pour permettre plusieurs tables 
+    ☐ sh pour dire qu'on va generer un model
+    ☐ plusieurs tables
+    ☐ 1 template 
+    ☐ 1 fichier de configuration 
+
+Generation controller:
+    ☐ sh pour dire qu'on va generer un controller
+    ☐ 1 template
+    ☐ modifier fichier de configuration
+    ☐ main pour generation controller 

@@ -1,0 +1,22 @@
+{
+    "package":
+        {
+            "start":"packagestart",
+            "end":"packageend"
+        },
+    "import":
+        {
+            "start":"importstart",
+            "end":"importend"
+        },
+    "fields":
+        {
+            "start":"fieldsstart",
+            "end" : "fieldsend"
+        },
+    "methods":
+        {
+            "start":"settersgettersstart",
+            "end" : "settersgettersend"
+        }
+}

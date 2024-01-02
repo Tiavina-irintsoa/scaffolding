@@ -1,7 +1,0 @@
-{
-            "SGBD": "postgresql",
-            "hote": "localhost",
-            "port": "5432",
-            "base_de_donnees": "scaffold",
-            "nom_utilisateur": "postgres"
-        }

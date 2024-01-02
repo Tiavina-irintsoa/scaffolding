@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import com.google.gson.Gson;
 
+import exceptions.DbConfigException;
 import scaffolding.DBConfig;
 
 public class DbConfigReader {
@@ -13,6 +14,9 @@ public class DbConfigReader {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             Gson gson = new Gson();
             DBConfig dbconfig = gson.fromJson(reader, DBConfig.class);
+            if (dbconfig.isValid()==false){
+                throw new DbConfigException();
+            }
             return dbconfig;
         } catch (IOException e) {
             throw e;

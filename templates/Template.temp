@@ -1,7 +1,23 @@
-@package@ ##package##;
-@import@
-
-public class ##classname## {
-    ##attributs##
-    ##getterssetters##
-}
+$packagestart$
+@package@ ##package## @lineend@
+$packageend$
+$importstart$
+@import@ ##import_value## @lineend@
+$importend$
+@linebreak@
+@publicencaps@ @class@ ##classname## @bracketstart@
+@linebreak@
+$fieldsstart$
+@tab@ @privateencaps@ ##fieldtype## #fieldname## @lineend@
+$fieldsend$
+$settersgettersstart$
+@linebreak@
+@tab@ @publicencaps@ ##fieldtype## @get@##fieldupperfparenthesisstartirst## @parenthesisstart@@parenthesisend@ @bracketstart@
+@tab@@tab@@return@ @this@@dot@##fieldname##@lineend@
+@tab@@bracketsend@
+@linebreak@
+@tab@ @publicencaps@ @voidtype@ @set@##fieldupperfirst## @parenthesisstart@##fieldtype## ##fieldname## @parenthesisend@ @bracketstart@
+@tab@@tab@@this@@dot@##fieldname##@affect@##fieldname##@lineend@
+@tab@@bracketsend@
+$settersgettersend$
+@bracketsend@

@@ -1,11 +1,17 @@
 package scaffolding;
 
+import com.google.gson.annotations.SerializedName;
+
 public class MyClasse {
+    @SerializedName("classname")
     String className;
+    @SerializedName("package")
     String packageName;
+    public MyClasse() {
+    }
     public MyClasse(String className, String packageName) {
-        this.className = className;
-        this.packageName = packageName;
+        setClassName(className);
+        setPackageName(packageName);
     }
     public String getClassName() {
         return className;
@@ -19,4 +25,9 @@ public class MyClasse {
     public void setPackageName(String packageName) {
         this.packageName = packageName;
     }
+    @Override
+    public String toString() {
+        return "MyClasse [className=" + className + ", packageName=" + packageName + "]";
+    }
+   
 }

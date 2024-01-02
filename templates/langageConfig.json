@@ -1,20 +1,173 @@
 [
     {
         "langage":"java" ,
-        "properties": { 
+        "syntaxes": { 
             "package" : "package",
             "import" : "import",
-            "ext" : "java",
-            "notimport" : ["java.lang"]
+            "lineend" : ";",
+            "linebreak" : "\n",
+            "publicencaps" : "public",
+            "privateencaps" : "private",
+            "tab":" ",
+            "this": "this",
+            "dot": ".",
+            "get": "get",
+            "set": "set",
+            "affect": "="
+        },
+        "ext" : "java",
+        "notimport" : ["java.lang"],
+        "types":{
+            "varchar":{
+                "package":"java.lang",
+                "classname": "String" 
+            },
+            "text":{
+                "package":"java.lang",
+                "classname": "String" 
+            },
+            "json":{
+                "package":"java.lang",
+                "classname": "String" 
+            },
+            "char":{
+                "package":"java.lang",
+                "classname": "String" 
+            },
+            "uuid":{
+                "package":"java.lang",
+                "classname": "String" 
+            },
+            "int":{
+                "package":"java.lang",
+                "classname": "Integer" 
+            },
+            "bigint":{
+                "package":"java.lang",
+                "classname": "Long" 
+            },
+            "serial":{
+                "package":"java.lang",
+                "classname": "Long" 
+            },
+            "numeric":{
+                "package":"java.lang",
+                "classname": "Double" 
+            },
+            "decimal":{
+                "package":"java.lang",
+                "classname": "Double" 
+            },
+            "real":{
+                "package":"java.lang",
+                "classname": "Float" 
+            },
+            "date":{
+                "package":"java.sql",
+                "classname": "Date" 
+            },
+            "datetime":{
+                "package":"java.sql",
+                "classname": "Timestamp" 
+            },
+            "time":{
+                "package":"java.sql",
+                "classname": "Time" 
+            },
+            "timestamp":{
+                "package":"java.sql",
+                "classname": "Timestamp" 
+            },
+            "boolean":{
+                "package":"java.lang",
+                "classname": "Boolean" 
+            }
         }
     },
     {
-        "langage" : "csharp" ,
-        "properties" : { 
-            "package" : "namespace", 
-            "import" : "using", 
-            "ext" : "cs", 
-            "notimport" : ["System"]
-        }   
+        "langage":"csharp" ,
+        "syntaxes": { 
+            "package" : "namespace",
+            "import" : "using",
+            "lineend" : ";",
+            "linebreak" : "\n",
+            "publicencaps" : "public",
+            "privateencaps" : "private",
+            "tab":" ",
+            "this": "this",
+            "dot": ".",
+            "get": "Get",
+            "set": "Set",
+            "affect": "="
+        },
+        "ext" : "cs",
+        "notimport" : ["System"],
+
+        "types": {
+            "varchar": {
+                "package": "System",
+                "classname": "String"
+            },
+            "text": {
+                "package": "System",
+                "classname": "String"
+            },
+            "json": {
+                "package": "System",
+                "classname": "String"
+            },
+            "char": {
+                "package": "System",
+                "classname": "String"
+            },
+            "uuid": {
+                "package": "System",
+                "classname": "String"
+            },
+            "int": {
+                "package": "System",
+                "classname": "Int32"
+            },
+            "bigint": {
+                "package": "System",
+                "classname": "Int64"
+            },
+            "serial": {
+                "package": "System",
+                "classname": "Int64"
+            },
+            "numeric": {
+                "package": "System",
+                "classname": "Double"
+            },
+            "decimal": {
+                "package": "System",
+                "classname": "Double"
+            },
+            "real": {
+                "package": "System",
+                "classname": "Single"
+            },
+            "date": {
+                "package": "System",
+                "classname": "DateTime"
+            },
+            "time": {
+                "package": "System",
+                "classname": "TimeSpan"
+            },
+            "datetime":{
+                "package":"System",
+                "classname": "DateTime" 
+            },
+            "timestamp": {
+                "package": "System",
+                "classname": "DateTime"
+            },
+            "boolean": {
+                "package": "System",
+                "classname": "Boolean"
+            }
+        }
     }
 ]

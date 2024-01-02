@@ -13,10 +13,12 @@ public class DBConfig {
     @SerializedName("port")
     String port;
 
+    public boolean isValid(){
+        return getDatabaseName().length()>0 && getHost().length()>0 && getPort().length()>0 && getServer().length()>0 && getUsername().length()>0;
+    }
     public String getConnectionString() throws Exception{
         if(this.getServer().compareTo("postgresql")==0 || this.getServer().compareTo("mysql")==0){
           String conString =  "jdbc:"+this.getServer()+"://"+this.getHost()+":"+this.getPort()+"/"+this.getDatabaseName();
-          System.out.println(conString);
           return conString;
         }
         throw new Exception("SGBD non specifie");
