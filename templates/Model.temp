@@ -12,7 +12,7 @@ $classdeclarationend$
 $fieldsstart$
 @tab@ @privateencaps@ ##fieldtype## ##fieldname## @lineend@
 $fieldsend$
-$settersgettersstart$
+$methodsstart$
 @linebreak@
 @tab@ @publicencaps@ ##fieldtype## @get@##fieldupperfirst## @parenthesisstart@@parenthesisend@ @bracketstart@
 @tab@@tab@@return@ @this@@dot@##fieldname##@lineend@
@@ -21,7 +21,7 @@ $settersgettersstart$
 @tab@@publicencaps@ @voidtype@ @set@##fieldupperfirst## @parenthesisstart@##fieldtype## ##fieldname##@parenthesisend@ @bracketstart@
 @tab@@tab@@this@@dot@##fieldname##@affect@##fieldname##@lineend@
 @tab@@bracketsend@
-$settersgettersend$
+$methodsend$
 $endclassstart$
 @bracketsend@
 $endclassend$

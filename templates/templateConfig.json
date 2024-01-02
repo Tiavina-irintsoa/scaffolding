@@ -20,8 +20,8 @@
         },
     "methods":
         {
-            "start":"settersgettersstart",
-            "end" : "settersgettersend"
+            "start":"methodsstart",
+            "end" : "methodsend"
         },
     "endClass":
         {
