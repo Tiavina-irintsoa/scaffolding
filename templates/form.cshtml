@@ -1,0 +1,21 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire en Razor</title>
+</head>
+<body>
+
+<h2>Formulaire en Razor</h2>
+
+<form action="/Account/ProcessLogin" method="post">
+    Nom d'utilisateur: <input type="text" name="username" required><br>
+    Mot de passe: <input type="password" name="password" required><br>
+    <input type="submit" value="Se connecter">
+</form>
+
+</body>
+</html>

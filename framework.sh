@@ -23,10 +23,29 @@ case "$1" in
             if [ -z "$modele" ]; then
                 modele=$defaultmodel
             fi
-            read -p "Nom du package :" package
+            read -p "Nom du package : " package
             java run.GenerateModel $motdepasse $table $modele $package $langage
-            esac
-            ;;
+        ;;
+        "controller")
+            read -s -p "Mot de passe : " motdepasse
+            read -p "Language [1:spring-boot, 2:framework, 3:dotnet] : " chiffrelangage
+            if [ "$chiffrelangage" == "1" ]; then
+                langage="spring-boot"
+            elif [ "$chiffrelangage" == "2" ]; then 
+                langage="framework"
+            elif [ "$chiffrelangage" == "3" ]; then 
+                langage="dotnet"
+            else
+                read -p "Language [1:spring-boot, 2:framework, 3:dotnet] : " chiffrelangage
+            fi
+            read -p "Url Mapping": url
+            read -p "Package du controller : " controllerpackage
+            read -p "Classe du controller : " controllerclass
+            read -p "Attribut primary key : " pkfield
+            java run.GenerateController $motdepasse $controllerpackage $controllerclass $url $pkfield $langage 
+        ;;
+        esac
+        ;;
     "new")
         case "$2" in "project")
             defaultconfiguration='{

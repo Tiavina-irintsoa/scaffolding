@@ -13,4 +13,11 @@ public class FileUtil {
         writer.write(content);
         writer.close();
     }
+    public static void createAndWriteController(String fileName, String content) throws IOException{
+        File fichier = new File("controllers/"+fileName);
+        FileWriter fileWriter = new FileWriter(fichier);
+        BufferedWriter writer = new BufferedWriter(fileWriter);
+        writer.write(content);
+        writer.close();
+    }
 }

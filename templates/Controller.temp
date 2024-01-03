@@ -1,37 +1,43 @@
 $packagestart$
-@package@ ##package##@lineend@
+~package~ ##package##~lineend~
 $packageend$
 $importstart$
-@import@ ##import_value## @lineend@
+~import~ ##import_value## ~lineend~
 $importend$
-@linebreak@
+~linebreak~
 $classannotationstart$
-@annotationstart@@routeannotation@@parenthesisstart@@quote@##mapping##@quote@@parenthesisend@annotationend@
-@annotationstart@##restannotation##@@annotationend@
+~annotationstart~~restannotation~~annotationend~
 $classannotationend$
 $classdeclarationstart$
-@publicencaps@ @class@ ##classname## @bracketstart@
+~publicencaps~ ~class~ ##classname## ~bracketstart~
 $classdeclarationend$
 $methodsstart$
-$methodannotationstart$
-@annotationstart@@getannotation@@annotationend@
-@tab@ @publicencaps@ @controllerReturnType@ @getAll@ @parenthesisstart@@parenthesisend@@bracketstart@
-@tab@@tab@@return@ @null@@lineend@
-@tab@ @bracketsend@
-@annotationstart@@getannotation@@parenthesisstart@@quote@@slashbeforebracket@@bracketstart@##pkfield##@bracketsend@@quote@@parenthesisend@@annotationend@
-@tab@ @publicencaps@ @controllerReturnType@ @getById@ @parenthesisstart@@parenthesisend@@bracketstart@
-@tab@@tab@@return@ @null@@lineend@
-@annotationstart@@putannotation@@parenthesisstart@@quote@@slashbeforebracket@@bracketstart@##pkfield##@bracketsend@@quote@@parenthesisend@@annotationend@
-@tab@ @publicencaps@ @controllerReturnType@ @update@ @parenthesisstart@@parenthesisend@@bracketstart@
-@tab@@tab@@return@ @null@@lineend@
-@annotationstart@@postannotation@@annotationend@
-@tab@ @publicencaps@ @controllerReturnType@ @create@ @parenthesisstart@@parenthesisend@@bracketstart@
-@tab@@tab@@return@ @null@@lineend@
-@tab@ @bracketsend@
-@annotationstart@@deleteannotation@@parenthesisstart@@quote@@slashbeforebracket@@bracketstart@##pkfield##@bracketsend@@quote@@parenthesisend@@annotationend@
-@tab@ @publicencaps@ @controllerReturnType@ @delete@ @parenthesisstart@@parenthesisend@@bracketstart@
-@tab@@tab@@return@ @null@@lineend@
+~tab~~annotationstart~~getannotation~~parenthesisstart~~quote~##url##~quote~~parenthesisend~~annotationend~
+~tab~~publicencaps~ ~controllerReturnType~ ~getAll~ ~parenthesisstart~~parenthesisend~~bracketstart~
+~tab~~tab~~comment~~commentaire~
+~tab~~tab~~return~ ~null~~lineend~
+~tab~~bracketsend~
+~tab~~annotationstart~~getannotation~~parenthesisstart~~quote~##url##~slash~~bracketstart~##pkfield##~bracketsend~~quote~~parenthesisend~~annotationend~
+~tab~~publicencaps~ ~controllerReturnType~ ~getById~ ~parenthesisstart~~parenthesisend~~bracketstart~
+~tab~~tab~~comment~~commentaire~
+~tab~~tab~~return~ ~null~~lineend~
+~tab~~bracketsend~
+~tab~~annotationstart~~putannotation~~parenthesisstart~~quote~##url##~slash~~bracketstart~##pkfield##~bracketsend~~quote~~parenthesisend~~annotationend~
+~tab~~publicencaps~ ~controllerReturnType~ ~update~ ~parenthesisstart~~parenthesisend~~bracketstart~
+~tab~~tab~~comment~~commentaire~
+~tab~~tab~~return~ ~null~~lineend~
+~tab~~bracketsend~
+~tab~~annotationstart~~postannotation~~parenthesisstart~~quote~##url##~quote~~parenthesisend~~annotationend~
+~tab~~publicencaps~ ~controllerReturnType~ ~create~ ~parenthesisstart~~parenthesisend~~bracketstart~
+~tab~~tab~~comment~~commentaire~
+~tab~~tab~~return~ ~null~~lineend~
+~tab~~bracketsend~
+~tab~~annotationstart~~deleteannotation~~parenthesisstart~~quote~##url##~slash~~bracketstart~##pkfield##~bracketsend~~quote~~parenthesisend~~annotationend~
+~tab~~publicencaps~ ~controllerReturnType~ ~delete~ ~parenthesisstart~~parenthesisend~~bracketstart~
+~tab~~tab~~comment~~commentaire~
+~tab~~tab~~return~ ~null~~lineend~
+~tab~~bracketsend~
 $methodsend$
 $endclassstart$
-@bracketsend@
+~bracketsend~
 $endclassend$

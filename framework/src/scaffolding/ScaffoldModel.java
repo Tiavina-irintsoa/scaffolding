@@ -123,7 +123,7 @@ public class ScaffoldModel extends Scaffold{
         String betweenTags = "";
         if(matcher.find()){
             betweenTags = matcher.group(1);
-            betweenTags = betweenTags.replace("##package## ", modele.getPackageName());
+            betweenTags = betweenTags.replace("##package##", modele.getPackageName());
         }
         return betweenTags;
     }

@@ -37,12 +37,12 @@ public class TemplateUtil {
         return contenu.toString();
     }
     public static String replaceSyntaxes(String toReplace, Langage langage){
-        String regex = "@(.*?)@";
+        String regex = "~(.*?)~";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(toReplace);
         String syntax = null;
-        while(matcher.find()){
-                        syntax = matcher.group();
+        while(matcher.find()){  
+            syntax = matcher.group();
             toReplace = toReplace.replace(syntax, langage.getSyntaxOf(StringUtil.removeFirstAndLastCharacter(syntax)));
         }
         return toReplace;
