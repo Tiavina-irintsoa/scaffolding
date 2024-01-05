@@ -1,0 +1,62 @@
+[
+    {
+        "langage":"java" ,
+        "syntaxes": { 
+            "pageimport" : "<%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>",
+            "tagstart" : "<%",
+            "tagend" : "%>",
+            "loopname" : "for",
+            "affect": ":",
+            "equal":"="
+        },
+        "ext" : "jsp"
+    },
+    {
+        "langage":"spring-boot" ,
+        "syntaxes": { 
+            "pageimport" : "<%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>",
+            "tagstart" : "<%",
+            "tagend" : "%>",
+            "loopname" : "for",
+            "affect": ":",
+            "equal":"="
+        },
+        "ext" : "jsp"
+    },
+    {
+        "langage":"framework" ,
+        "syntaxes": { 
+            "pageimport" : "<%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>",
+            "tagstart" : "<%",
+            "tagend" : "%>",
+            "loopname" : "for",
+            "affect": ":",
+            "equal":"="
+        },
+        "ext" : "jsp"
+    },
+    {
+        "langage":"csharp" ,
+        "syntaxes": { 
+            "pageimport" : "",
+            "tagstart" : "",
+            "tagend" : "",
+            "loopname" : "@foreach",
+            "affect": "in",
+            "equal":""
+        },
+        "ext" : "cshtml"
+    },
+    {
+        "langage":"dotnet" ,
+        "syntaxes": { 
+            "pageimport" : "",
+            "tagstart" : "",
+            "tagend" : "",
+            "loopname" : "@foreach",
+            "affect": "in",
+            "equal":""
+        },
+        "ext" : "cshtml"
+    }
+]

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulaire d'insertion</title>
+    </head>
+    <body>
+
+        <h2>Formulaire d'insertion</h2>
+
+        <form action="##action##" method="##method##">
+
+            <label for="##fieldname##"> ##fieldname## :</label>
+            $textstart$
+            <input type="text" id="##fieldname##" name="##fieldname##" required><br>
+            $textend$
+            $numberstart$
+            <input type="number" id="##fieldname##" name="##fieldname##" required><br>
+            $numberend$
+            $datestart$
+            <input type="date" id="##fieldname##" name="##fieldname##" required><br>
+            $dateend$            
+            $datetimestart$
+            <input type="datetime-local" name="##fieldname##" id="##fieldname##">
+            $datetimeend$
+            $timestart$
+            <input type="time" name="##fieldname##" id="##fieldname##">
+            $timeend$
+
+            <input type="submit" value="Valider">
+        </form>
+
+    </body>
+</html>

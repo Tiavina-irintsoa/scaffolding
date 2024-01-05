@@ -1,0 +1,41 @@
+$importstart$
+##pageimport##
+~tagstart~
+    List<##type##> ##list## = (List<##type##>) request.getAttribute("##list##");
+~tagend~
+$importend$
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Liste</title>
+    </head>
+    <body>
+
+        <h2>Liste</h2>
+
+        <table>
+    <thead>
+        <tr>
+            $entetestart$
+            <th> ##fieldname## </th>
+            $enteteend$
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        ~tagstart~ ##loopname## (##type## ##classname## ##affect## ##list##) 
+        { ~tagend~
+            <tr>                
+                $objectstart$
+                <td> ~tagstart~~equal~ ##classname##.##fieldname## ~tagend~ </td>
+                $objectend$
+                <td><a href="#"> Modifier </a></td>
+                <td><a href="#"> Supprimer </a></td>
+            </tr>
+        ~tagstart~ } ~tagend~
+    </tbody>
+</table>
+
+    </body>
+</html>
