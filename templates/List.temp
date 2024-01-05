@@ -1,9 +1,9 @@
-$importstart$
-##pageimport##
+$importsstart$
+~pageimport~
 ~tagstart~
     List<##type##> ##list## = (List<##type##>) request.getAttribute("##list##");
 ~tagend~
-$importend$
+$importsend$
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +24,7 @@ $importend$
         </tr>
     </thead>
     <tbody>
-        ~tagstart~ ##loopname## (##type## ##classname## ##affect## ##list##) 
+        ~tagstart~ ~loopname~ (##type## ##classname## ~affect~ ##list##) 
         { ~tagend~
             <tr>                
                 $objectstart$

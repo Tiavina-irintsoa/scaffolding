@@ -32,5 +32,20 @@
         {
            "start":"classannotationstart",
            "end": "classannotationend"
+        },
+    "object":
+        {
+            "start":"objectstart",
+            "end":"objectend"
+        },
+    "imports":
+        {
+            "start":"importsstart",
+            "end":"importsend"
+        },
+    "entete":
+        {
+            "start":"entetestart",
+            "end" : "enteteend"
         }
 }

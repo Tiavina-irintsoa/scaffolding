@@ -15,7 +15,29 @@ import scaffolding.TemplateSettings;
 public class TemplateUtil {
     static private String modelTemp=System.getenv("templateDIR")+"/Model.temp";
     static private String controllerTemp=System.getenv("templateDIR")+"/Controller.temp";
+    static private String listTemp = System.getenv("templateDIR")+"/List.temp";
+    static private String formTemp = System.getenv("templateDIR")+"/Form.temp.temp";
     static String templateSettings=System.getenv("templateDIR")+"/templateConfig.json";
+    public static String readListTemp() throws FileNotFoundException, IOException{
+        StringBuilder contenu = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader(listTemp))) {
+            String ligne;
+            while ((ligne = reader.readLine()) != null) {
+                contenu.append(ligne).append("\n");
+            }
+        }
+        return contenu.toString();
+    }
+    public static String readFormTemp() throws FileNotFoundException, IOException{
+        StringBuilder contenu = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader(formTemp))) {
+            String ligne;
+            while ((ligne = reader.readLine()) != null) {
+                contenu.append(ligne).append("\n");
+            }
+        }
+        return contenu.toString();
+    }
     public static String readModelTemp() throws FileNotFoundException, IOException{
         StringBuilder contenu = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(modelTemp))) {

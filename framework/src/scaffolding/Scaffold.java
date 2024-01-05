@@ -6,6 +6,13 @@ public class Scaffold {
     String motdepasse;
     MyClasse modele;
     Langage langage;
+    View view;
+    public View getView() {
+        return view;
+    }
+    public void setView(View view) {
+        this.view = view;
+    }
     public Scaffold() {
     }
     public String getMotdepasse() {

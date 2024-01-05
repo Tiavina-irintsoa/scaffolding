@@ -20,10 +20,17 @@ public class TemplateSettings {
     TemplateTag endTags;
     @SerializedName("classAnnotation")
     TemplateTag classAnnotations;
+    @SerializedName("object")
+    TemplateTag object;
+    @SerializedName("imports")
+    TemplateTag imports;
+    @SerializedName("entete")
+    TemplateTag entete;
 
     public TemplateSettings(){
 
     }
+    
     public String getPackageRegex(){
         return StringUtil.regex(packageTags.getStart(), packageTags.getEnd());
     }
@@ -45,6 +52,16 @@ public class TemplateSettings {
     public String getClassAnnotationRegex(){
         return StringUtil.regex(classAnnotations.getStart(), classAnnotations.getEnd());
     }
+    public String getObjectRegex(){
+        return StringUtil.regex(object.getStart(), object.getEnd());
+    }
+    public String getImportsRegex(){
+        return StringUtil.regex(imports.getStart(), imports.getEnd());
+    }
+    public String getEnteteRegex(){
+        return StringUtil.regex(entete.getStart(), entete.getEnd());
+    }
+
     public TemplateTag getPackageTags() {
         return packageTags;
     }
@@ -87,5 +104,23 @@ public class TemplateSettings {
     }
     public void setClassAnnotations(TemplateTag classAnnotations) {
         this.classAnnotations = classAnnotations;
+    }
+    public TemplateTag getObject() {
+        return object;
+    }
+    public void setObject(TemplateTag object) {
+        this.object = object;
+    }
+    public TemplateTag getImports() {
+        return imports;
+    }
+    public void setImports(TemplateTag imports) {
+        this.imports = imports;
+    }
+    public TemplateTag getEntete() {
+        return entete;
+    }
+    public void setEntete(TemplateTag entete) {
+        this.entete = entete;
     }
 }
